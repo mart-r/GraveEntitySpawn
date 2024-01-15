@@ -1,0 +1,13 @@
+name: GraveEntitySpawn
+main: com.goyanov.ges.main.GraveEntitySpawn
+version: 1.14
+api-version: 1.13
+load: STARTUP
+softdepend: [ProtocolLib]
+commands:
+  ges:
+    description: Reload the GraveEntitySpawn plugin
+    permission: GraveEntitySpawn.admin
+    permission-message: You aren't an admin of this server!
+    aliases:
+    - graveentityspawn

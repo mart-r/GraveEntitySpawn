@@ -1,0 +1,58 @@
+# Spawn all entities like from grave? false - for no entities. Use whitelist and blacklist to modify allowed mob types
+all-mobs: true
+
+# Will spawning mobs be damageable while spawning?
+can-be-damaged-while-spawning: true
+
+# What types of mobs will be always spawned like from graves?
+# Example:
+#   white-list-entities:
+#   - HORSE
+#   - SKELETON
+white-list-entities: []
+
+# What types of mobs will be never spawned like from graves?
+# Example:
+#   black-list-entities:
+#   - STRAY
+#   - FOX
+black-list-entities: []
+
+# Use this option, if you want to disable this plugin in certain worlds
+# Example:
+#   disallowed-worlds:
+#   - world_nether
+disallowed-worlds: []
+
+# You can add disallowed grave-spawn reasons
+blocked-spawn-reasons:
+- CURED
+- INFECTION
+
+# How long will mob be rising?
+spawn-duration-seconds: 2.2
+
+# If false, the 'vehicle' mob will be considered
+# when deciding whether or not to use GES for spawning
+# If true, the 'riding' mob will be considered
+# for the same effect
+on-jockey-use-rider: false
+
+# Play sound, while mobs rise?
+play-sound: false
+
+# You can modify spawn sound (Not recommended)
+spawn-sound:
+  name: BLOCK_GRAVEL_HIT
+  loudness: 0.2
+  pitch: 0.1
+  delay-in-ticks: 4
+
+# You can disable particles if you want
+spawn-particles: true
+
+# Do we need to spawn particles from a block under the spawning entity?
+use-block-under-entity-for-particles: true
+
+# What the block will be used for particles of a mob's spawning (if previous setting is set to false)
+spawn-particle-block: LAVA
