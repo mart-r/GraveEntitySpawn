@@ -1,6 +1,6 @@
-package com.goyanov.ges.commands;
+package ges.commands;
 
-import com.goyanov.ges.main.GraveEntitySpawn;
+import ges.main.GraveEntitySpawn;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;

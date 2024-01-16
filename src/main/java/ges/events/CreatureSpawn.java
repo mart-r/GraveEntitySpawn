@@ -1,7 +1,7 @@
-package com.goyanov.ges.events;
+package ges.events;
 
-import com.goyanov.ges.main.GraveEntitySpawn;
-import com.goyanov.ges.utils.PluginSettings;
+import ges.main.GraveEntitySpawn;
+import ges.utils.PluginSettings;
 
 import java.util.HashSet;
 import java.util.Set;

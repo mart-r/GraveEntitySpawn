@@ -1,4 +1,4 @@
-package com.goyanov.ges.hooks;
+package ges.hooks;
 
 import com.comphenix.protocol.PacketType;
 import com.comphenix.protocol.ProtocolLibrary;

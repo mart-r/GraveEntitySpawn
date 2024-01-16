@@ -1,4 +1,4 @@
-package com.goyanov.ges.hooks;
+package ges.hooks;
 
 import org.bukkit.entity.LivingEntity;
 

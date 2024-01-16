@@ -1,4 +1,4 @@
-package com.goyanov.ges.utils;
+package ges.utils;
 
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.Marker;

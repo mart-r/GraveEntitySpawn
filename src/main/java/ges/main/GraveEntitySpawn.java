@@ -1,12 +1,12 @@
-package com.goyanov.ges.main;
+package ges.main;
 
-import com.goyanov.ges.commands.CommandReload;
-import com.goyanov.ges.events.CreatureSpawn;
-import com.goyanov.ges.hooks.DummyProtocolLibHook;
-import com.goyanov.ges.hooks.ProtocolLibHook;
-import com.goyanov.ges.hooks.SimpleProtocolLibHook;
-import com.goyanov.ges.utils.PluginSettings;
-import com.goyanov.ges.utils.WrongLocationFixer;
+import ges.commands.CommandReload;
+import ges.events.CreatureSpawn;
+import ges.hooks.DummyProtocolLibHook;
+import ges.hooks.ProtocolLibHook;
+import ges.hooks.SimpleProtocolLibHook;
+import ges.utils.PluginSettings;
+import ges.utils.WrongLocationFixer;
 
 import java.io.File;
 

@@ -1,4 +1,4 @@
-package com.goyanov.ges.utils;
+package ges.utils;
 
 import java.util.ArrayList;
 import java.util.List;
