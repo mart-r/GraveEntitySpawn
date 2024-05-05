@@ -29,7 +29,7 @@ public class SimpleProtocolLibHook extends PacketAdapter implements ProtocolLibH
 
     public SimpleProtocolLibHook(JavaPlugin plugin)
     {
-        super((Plugin) plugin, ListenerPriority.NORMAL, new PacketType[]{PacketType.Play.Server.SPAWN_ENTITY_LIVING});
+        super((Plugin) plugin, ListenerPriority.NORMAL, new PacketType[]{PacketType.Play.Server.SPAWN_ENTITY});
         this.plugin = plugin;
         this.protocolManager.addPacketListener((PacketListener) this);
     }
@@ -46,7 +46,7 @@ public class SimpleProtocolLibHook extends PacketAdapter implements ProtocolLibH
 
     public void onPacketSending(PacketEvent event)
     {
-        if (event.getPacketType() != PacketType.Play.Server.SPAWN_ENTITY_LIVING)
+        if (event.getPacketType() != PacketType.Play.Server.SPAWN_ENTITY)
             return;
         PacketContainer packet = event.getPacket();
         LivingEntity ent = identifyEntity(packet);
@@ -80,6 +80,6 @@ public class SimpleProtocolLibHook extends PacketAdapter implements ProtocolLibH
     {
         StructureModifier<Double> doubles = packet.getDoubles();
         double prev = ((Double) doubles.read(1)).doubleValue();
-        doubles.write(1, Double.valueOf(prev + -2.0D));
+        doubles.write(1, Double.valueOf(prev + CHANGE_Y));
     }
 }
