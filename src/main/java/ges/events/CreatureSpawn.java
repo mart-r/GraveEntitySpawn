@@ -4,6 +4,7 @@ import ges.main.GraveEntitySpawn;
 import ges.utils.PluginSettings;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import org.bukkit.Location;
@@ -74,6 +75,14 @@ public class CreatureSpawn implements Listener
         }
     }
 
+    private Entity getPrimaryPassenger(LivingEntity ent) {
+        List<Entity> entPassengers = ent.getPassengers();
+        if (entPassengers.isEmpty()) {
+            return null;
+        }
+        return entPassengers.get(0);
+    }
+
     private void smoothEntitySpawnFromGrave(final LivingEntity ent)
     {
         if (this.passengers.contains(ent))
@@ -86,7 +95,7 @@ public class CreatureSpawn implements Listener
         final Location particleLocation = ent.getLocation();
         final Location entLoc = particleLocation.clone();
         fixChunkBoundary(ent, entLoc);
-        final Entity passenger = ent.getPassenger();
+        final Entity passenger = getPrimaryPassenger(ent);
         if (passenger != null)
             this.passengers.add(passenger);
         if (!entLoc.clone().add(0.0D, -1.0D, 0.0D).getBlock().getType().isSolid() || entLoc.getBlock().getType().toString().contains("WATER"))
@@ -125,7 +134,7 @@ public class CreatureSpawn implements Listener
                     entLoc.add(0.0D, step, 0.0D);
                 } else
                 {
-                    if (passenger != null && !passenger.equals(ent.getPassenger()))
+                    if (passenger != null && !passenger.equals(getPrimaryPassenger(ent)))
                         ent.addPassenger(passenger);
                     PluginSettings.getSpawningEntities().remove(ent);
                     if (passenger != null)
@@ -167,7 +176,7 @@ public class CreatureSpawn implements Listener
                 smoothEntitySpawnFromGrave(spawnedEntity);
             } else
             {
-                Entity passenger = spawnedEntity.getPassenger();
+                Entity passenger = getPrimaryPassenger(spawnedEntity);
                 if (passenger != null && isApplicable(passenger.getType()))
                     this.noSpawnPassengers.add(passenger);
             }
@@ -178,7 +187,7 @@ public class CreatureSpawn implements Listener
     {
         if (!PluginSettings.getUseJockeyRider())
             return entity.getType();
-        Entity passenger = entity.getPassenger();
+        Entity passenger = getPrimaryPassenger(entity);
         if (passenger == null)
             return entity.getType();
         return passenger.getType();
